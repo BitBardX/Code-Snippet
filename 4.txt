@@ -20,12 +20,7 @@ class Program
         {
             Console.WriteLine("Error: Division by Zero Exception caught!");
             Console.WriteLine("Exception message: " + ex.Message);
-        }
-        catch (FormatException ex)
-        {
-            Console.WriteLine("Error: Please enter valid integer values!");
-            Console.WriteLine("Exception message: " + ex.Message);
-        }
+        } 
 
        
         try
@@ -41,11 +36,7 @@ class Program
         {
             Console.WriteLine("Error: Index Out of Range Exception caught!");
             Console.WriteLine("Exception message: " + ex.Message);
-        }
-        catch (FormatException ex)
-        {
-            Console.WriteLine("Error: Please enter valid integer values for index!");
-            Console.WriteLine("Exception message: " + ex.Message);
+        } 
         }
 
         Console.ReadLine();

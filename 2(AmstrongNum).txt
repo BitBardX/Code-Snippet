@@ -7,7 +7,7 @@ Console.WriteLine("Armstrong Numbers between 1 and 1000:");
 int a, b, c, d;
 for (int i = 1; i <= 1000; i++)
 {
-a = i / 100;
+a = i / 10;
 b = (i - a * 100) / 10;
 c = (i - a * 100 - b * 10);
 d = a * a * a + b * b * b + c * c * c;
@@ -17,4 +17,38 @@ System.Console.WriteLine("{0}", i);
 }
 }
 }
+}
+
+
+
+
+Another one
+
+using System;
+
+class ArmstrongNumbers
+{
+    static void Main()
+    {
+        Console.WriteLine("Armstrong Numbers between 1 and 1000:");
+
+        for (int number = 1; number <= 1000; number++)
+        {
+            int temp = number;
+            int sum = 0;
+            int numDigits = 0;
+
+            for (int i = number; i > 0; i /= 10)
+                numDigits++;
+
+            for (int i = number; i > 0; i /= 10)
+            {
+                int digit = i % 10;
+                sum += (int)Math.Pow(digit, numDigits);
+            }
+
+            if (number == sum)
+                Console.WriteLine(number);
+        }
+    }
 }

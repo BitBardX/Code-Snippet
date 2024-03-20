@@ -1,0 +1,29 @@
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the path of the source file: ");
+        string sourcePath = Console.ReadLine();
+
+        Console.Write("Enter the path of the destination file: ");
+        string destinationPath = Console.ReadLine();
+
+        try
+        {
+            // Read the contents of the source file
+            string[] lines = File.ReadAllLines(sourcePath);
+
+            // Write the contents to the destination file
+            File.WriteAllLines(destinationPath, lines);
+
+            Console.WriteLine("File copied successfully.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("An error occurred: " + ex.Message);
+        }
+    }
+}

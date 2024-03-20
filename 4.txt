@@ -1,0 +1,53 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+         
+        try
+        {
+            Console.WriteLine("Enter the numerator:");
+            int numerator = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter the denominator:");
+            int denominator = Convert.ToInt32(Console.ReadLine());
+
+            int result = numerator / denominator;  
+            Console.WriteLine("Result of division: " + result);
+        }
+        catch (DivideByZeroException ex)
+        {
+            Console.WriteLine("Error: Division by Zero Exception caught!");
+            Console.WriteLine("Exception message: " + ex.Message);
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine("Error: Please enter valid integer values!");
+            Console.WriteLine("Exception message: " + ex.Message);
+        }
+
+       
+        try
+        {
+            Console.WriteLine("Enter the index to access in the array:");
+            int index = Convert.ToInt32(Console.ReadLine());
+
+            int[] numbers = { 1, 2, 3, 4, 5 };
+            int value = numbers[index];
+            Console.WriteLine("Value at index " + index + ": " + value);
+        }
+        catch (IndexOutOfRangeException ex)
+        {
+            Console.WriteLine("Error: Index Out of Range Exception caught!");
+            Console.WriteLine("Exception message: " + ex.Message);
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine("Error: Please enter valid integer values for index!");
+            Console.WriteLine("Exception message: " + ex.Message);
+        }
+
+        Console.ReadLine();
+    }
+}
